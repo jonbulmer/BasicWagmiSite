@@ -10,12 +10,12 @@ import {
   UsePrepareContractWriteConfig,
   useContractEvent,
   UseContractEventConfig,
-} from 'wagmi'
+} from 'wagmi';
 import {
   ReadContractResult,
   WriteContractMode,
   PrepareWriteContractResult,
-} from 'wagmi/actions'
+} from 'wagmi/actions';
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // TimeDividendEth
@@ -358,7 +358,7 @@ export const timeDividendEthABI = [
     outputs: [],
   },
   { stateMutability: 'payable', type: 'receive' },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xd08481058399490B83a72676901d4e9dB70E75aC)
@@ -369,7 +369,7 @@ export const timeDividendEthAddress = {
   1: '0xd08481058399490B83a72676901d4e9dB70E75aC',
   56: '0x8734022D0fdBF1faeCE14cE077Edfcb936543E25',
   369: '0xCA35638A3fdDD02fEC597D8c1681198C06b23F58',
-} as const
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xd08481058399490B83a72676901d4e9dB70E75aC)
@@ -379,7 +379,7 @@ export const timeDividendEthAddress = {
 export const timeDividendEthConfig = {
   address: timeDividendEthAddress,
   abi: timeDividendEthABI,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // React
@@ -394,7 +394,7 @@ export const timeDividendEthConfig = {
  */
 export function useTimeDividendEthRead<
   TFunctionName extends string,
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -403,21 +403,17 @@ export function useTimeDividendEthRead<
       TSelectData
     >,
     'abi' | 'address'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -429,7 +425,7 @@ export function useTimeDividendEthRead<
  */
 export function useTimeDividendEthAccumulativeDividendOf<
   TFunctionName extends 'accumulativeDividendOf',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -438,22 +434,18 @@ export function useTimeDividendEthAccumulativeDividendOf<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'accumulativeDividendOf',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -465,7 +457,7 @@ export function useTimeDividendEthAccumulativeDividendOf<
  */
 export function useTimeDividendEthAllowance<
   TFunctionName extends 'allowance',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -474,22 +466,18 @@ export function useTimeDividendEthAllowance<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'allowance',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -501,7 +489,7 @@ export function useTimeDividendEthAllowance<
  */
 export function useTimeDividendEthBalanceOf<
   TFunctionName extends 'balanceOf',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -510,22 +498,18 @@ export function useTimeDividendEthBalanceOf<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'balanceOf',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -537,7 +521,7 @@ export function useTimeDividendEthBalanceOf<
  */
 export function useTimeDividendEthClaimableDividendOf<
   TFunctionName extends 'claimableDividendOf',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -546,22 +530,18 @@ export function useTimeDividendEthClaimableDividendOf<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'claimableDividendOf',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -573,7 +553,7 @@ export function useTimeDividendEthClaimableDividendOf<
  */
 export function useTimeDividendEthClamp<
   TFunctionName extends 'clamp',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -582,22 +562,18 @@ export function useTimeDividendEthClamp<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'clamp',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -609,7 +585,7 @@ export function useTimeDividendEthClamp<
  */
 export function useTimeDividendEthCumulativeDividendClaimed<
   TFunctionName extends 'cumulativeDividendClaimed',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -618,22 +594,18 @@ export function useTimeDividendEthCumulativeDividendClaimed<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'cumulativeDividendClaimed',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -645,7 +617,7 @@ export function useTimeDividendEthCumulativeDividendClaimed<
  */
 export function useTimeDividendEthDecimals<
   TFunctionName extends 'decimals',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -654,22 +626,18 @@ export function useTimeDividendEthDecimals<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'decimals',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -681,7 +649,7 @@ export function useTimeDividendEthDecimals<
  */
 export function useTimeDividendEthDividendFrom<
   TFunctionName extends 'dividendFrom',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -690,22 +658,18 @@ export function useTimeDividendEthDividendFrom<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'dividendFrom',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -717,7 +681,7 @@ export function useTimeDividendEthDividendFrom<
  */
 export function useTimeDividendEthMagnifiedDividendCorrections<
   TFunctionName extends 'magnifiedDividendCorrections',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -726,22 +690,18 @@ export function useTimeDividendEthMagnifiedDividendCorrections<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'magnifiedDividendCorrections',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -753,7 +713,7 @@ export function useTimeDividendEthMagnifiedDividendCorrections<
  */
 export function useTimeDividendEthMagnifiedDividendPerShare<
   TFunctionName extends 'magnifiedDividendPerShare',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -762,22 +722,18 @@ export function useTimeDividendEthMagnifiedDividendPerShare<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'magnifiedDividendPerShare',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -789,7 +745,7 @@ export function useTimeDividendEthMagnifiedDividendPerShare<
  */
 export function useTimeDividendEthMagnitude<
   TFunctionName extends 'magnitude',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -798,22 +754,18 @@ export function useTimeDividendEthMagnitude<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'magnitude',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -825,7 +777,7 @@ export function useTimeDividendEthMagnitude<
  */
 export function useTimeDividendEthName<
   TFunctionName extends 'name',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -834,22 +786,18 @@ export function useTimeDividendEthName<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'name',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -861,7 +809,7 @@ export function useTimeDividendEthName<
  */
 export function useTimeDividendEthOwner<
   TFunctionName extends 'owner',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -870,22 +818,18 @@ export function useTimeDividendEthOwner<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'owner',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -897,7 +841,7 @@ export function useTimeDividendEthOwner<
  */
 export function useTimeDividendEthSymbol<
   TFunctionName extends 'symbol',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -906,22 +850,18 @@ export function useTimeDividendEthSymbol<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'symbol',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -933,7 +873,7 @@ export function useTimeDividendEthSymbol<
  */
 export function useTimeDividendEthTotalSupply<
   TFunctionName extends 'totalSupply',
-  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>,
+  TSelectData = ReadContractResult<typeof timeDividendEthABI, TFunctionName>
 >(
   config: Omit<
     UseContractReadConfig<
@@ -942,22 +882,18 @@ export function useTimeDividendEthTotalSupply<
       TSelectData
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractRead({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'totalSupply',
     ...config,
-  } as UseContractReadConfig<
-    typeof timeDividendEthABI,
-    TFunctionName,
-    TSelectData
-  >)
+  } as UseContractReadConfig<typeof timeDividendEthABI, TFunctionName, TSelectData>);
 }
 
 /**
@@ -970,7 +906,7 @@ export function useTimeDividendEthTotalSupply<
 export function useTimeDividendEthWrite<
   TFunctionName extends string,
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -986,20 +922,20 @@ export function useTimeDividendEthWrite<
         TFunctionName,
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, TFunctionName, TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1011,7 +947,7 @@ export function useTimeDividendEthWrite<
  */
 export function useTimeDividendEthApprove<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1023,22 +959,22 @@ export function useTimeDividendEthApprove<
         TMode
       > & { address?: Address; chainId?: TChainId; functionName?: 'approve' }
     : UseContractWriteConfig<typeof timeDividendEthABI, 'approve', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'approve'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'approve';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'approve', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'approve',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1050,7 +986,7 @@ export function useTimeDividendEthApprove<
  */
 export function useTimeDividendEthBurn<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1062,22 +998,22 @@ export function useTimeDividendEthBurn<
         TMode
       > & { address?: Address; chainId?: TChainId; functionName?: 'burn' }
     : UseContractWriteConfig<typeof timeDividendEthABI, 'burn', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'burn'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'burn';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'burn', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'burn',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1089,7 +1025,7 @@ export function useTimeDividendEthBurn<
  */
 export function useTimeDividendEthBurnFrom<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1101,22 +1037,22 @@ export function useTimeDividendEthBurnFrom<
         TMode
       > & { address?: Address; chainId?: TChainId; functionName?: 'burnFrom' }
     : UseContractWriteConfig<typeof timeDividendEthABI, 'burnFrom', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'burnFrom'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'burnFrom';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'burnFrom', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'burnFrom',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1128,7 +1064,7 @@ export function useTimeDividendEthBurnFrom<
  */
 export function useTimeDividendEthClaimDividend<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1139,31 +1075,31 @@ export function useTimeDividendEthClaimDividend<
         'claimDividend',
         TMode
       > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'claimDividend'
+        address?: Address;
+        chainId?: TChainId;
+        functionName?: 'claimDividend';
       }
     : UseContractWriteConfig<
         typeof timeDividendEthABI,
         'claimDividend',
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'claimDividend'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'claimDividend';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'claimDividend', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'claimDividend',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1175,7 +1111,7 @@ export function useTimeDividendEthClaimDividend<
  */
 export function useTimeDividendEthDecreaseAllowance<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1186,24 +1122,24 @@ export function useTimeDividendEthDecreaseAllowance<
         'decreaseAllowance',
         TMode
       > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'decreaseAllowance'
+        address?: Address;
+        chainId?: TChainId;
+        functionName?: 'decreaseAllowance';
       }
     : UseContractWriteConfig<
         typeof timeDividendEthABI,
         'decreaseAllowance',
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'decreaseAllowance'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'decreaseAllowance';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<
     typeof timeDividendEthABI,
     'decreaseAllowance',
@@ -1214,7 +1150,7 @@ export function useTimeDividendEthDecreaseAllowance<
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'decreaseAllowance',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1226,7 +1162,7 @@ export function useTimeDividendEthDecreaseAllowance<
  */
 export function useTimeDividendEthIncreaseAllowance<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1237,24 +1173,24 @@ export function useTimeDividendEthIncreaseAllowance<
         'increaseAllowance',
         TMode
       > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'increaseAllowance'
+        address?: Address;
+        chainId?: TChainId;
+        functionName?: 'increaseAllowance';
       }
     : UseContractWriteConfig<
         typeof timeDividendEthABI,
         'increaseAllowance',
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'increaseAllowance'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'increaseAllowance';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<
     typeof timeDividendEthABI,
     'increaseAllowance',
@@ -1265,7 +1201,7 @@ export function useTimeDividendEthIncreaseAllowance<
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'increaseAllowance',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1277,7 +1213,7 @@ export function useTimeDividendEthIncreaseAllowance<
  */
 export function useTimeDividendEthMulticall<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1289,22 +1225,22 @@ export function useTimeDividendEthMulticall<
         TMode
       > & { address?: Address; chainId?: TChainId; functionName?: 'multicall' }
     : UseContractWriteConfig<typeof timeDividendEthABI, 'multicall', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'multicall'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'multicall';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'multicall', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'multicall',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1316,7 +1252,7 @@ export function useTimeDividendEthMulticall<
  */
 export function useTimeDividendEthRenounceOwnership<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1327,24 +1263,24 @@ export function useTimeDividendEthRenounceOwnership<
         'renounceOwnership',
         TMode
       > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'renounceOwnership'
+        address?: Address;
+        chainId?: TChainId;
+        functionName?: 'renounceOwnership';
       }
     : UseContractWriteConfig<
         typeof timeDividendEthABI,
         'renounceOwnership',
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'renounceOwnership'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'renounceOwnership';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<
     typeof timeDividendEthABI,
     'renounceOwnership',
@@ -1355,7 +1291,7 @@ export function useTimeDividendEthRenounceOwnership<
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'renounceOwnership',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1367,7 +1303,7 @@ export function useTimeDividendEthRenounceOwnership<
  */
 export function useTimeDividendEthTransfer<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1379,22 +1315,22 @@ export function useTimeDividendEthTransfer<
         TMode
       > & { address?: Address; chainId?: TChainId; functionName?: 'transfer' }
     : UseContractWriteConfig<typeof timeDividendEthABI, 'transfer', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'transfer'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'transfer';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'transfer', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'transfer',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1406,7 +1342,7 @@ export function useTimeDividendEthTransfer<
  */
 export function useTimeDividendEthTransferFrom<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1417,31 +1353,31 @@ export function useTimeDividendEthTransferFrom<
         'transferFrom',
         TMode
       > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'transferFrom'
+        address?: Address;
+        chainId?: TChainId;
+        functionName?: 'transferFrom';
       }
     : UseContractWriteConfig<
         typeof timeDividendEthABI,
         'transferFrom',
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'transferFrom'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'transferFrom';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<typeof timeDividendEthABI, 'transferFrom', TMode>({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'transferFrom',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1453,7 +1389,7 @@ export function useTimeDividendEthTransferFrom<
  */
 export function useTimeDividendEthTransferOwnership<
   TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof timeDividendEthAddress,
+  TChainId extends number = keyof typeof timeDividendEthAddress
 >(
   config: TMode extends 'prepared'
     ? UseContractWriteConfig<
@@ -1464,24 +1400,24 @@ export function useTimeDividendEthTransferOwnership<
         'transferOwnership',
         TMode
       > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'transferOwnership'
+        address?: Address;
+        chainId?: TChainId;
+        functionName?: 'transferOwnership';
       }
     : UseContractWriteConfig<
         typeof timeDividendEthABI,
         'transferOwnership',
         TMode
       > & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'transferOwnership'
-      } = {} as any,
+        abi?: never;
+        address?: never;
+        chainId?: TChainId;
+        functionName?: 'transferOwnership';
+      } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractWrite<
     typeof timeDividendEthABI,
     'transferOwnership',
@@ -1492,7 +1428,7 @@ export function useTimeDividendEthTransferOwnership<
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'transferOwnership',
     ...config,
-  } as any)
+  } as any);
 }
 
 /**
@@ -1506,17 +1442,17 @@ export function usePrepareTimeDividendEthWrite<TFunctionName extends string>(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, TFunctionName>,
     'abi' | 'address'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, TFunctionName>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, TFunctionName>);
 }
 
 /**
@@ -1530,18 +1466,18 @@ export function usePrepareTimeDividendEthApprove(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'approve'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'approve',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'approve'>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'approve'>);
 }
 
 /**
@@ -1555,18 +1491,18 @@ export function usePrepareTimeDividendEthBurn(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'burn'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'burn',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'burn'>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'burn'>);
 }
 
 /**
@@ -1580,18 +1516,18 @@ export function usePrepareTimeDividendEthBurnFrom(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'burnFrom'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'burnFrom',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'burnFrom'>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'burnFrom'>);
 }
 
 /**
@@ -1605,21 +1541,18 @@ export function usePrepareTimeDividendEthClaimDividend(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'claimDividend'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'claimDividend',
     ...config,
-  } as UsePrepareContractWriteConfig<
-    typeof timeDividendEthABI,
-    'claimDividend'
-  >)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'claimDividend'>);
 }
 
 /**
@@ -1636,21 +1569,18 @@ export function usePrepareTimeDividendEthDecreaseAllowance(
       'decreaseAllowance'
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'decreaseAllowance',
     ...config,
-  } as UsePrepareContractWriteConfig<
-    typeof timeDividendEthABI,
-    'decreaseAllowance'
-  >)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'decreaseAllowance'>);
 }
 
 /**
@@ -1667,21 +1597,18 @@ export function usePrepareTimeDividendEthIncreaseAllowance(
       'increaseAllowance'
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'increaseAllowance',
     ...config,
-  } as UsePrepareContractWriteConfig<
-    typeof timeDividendEthABI,
-    'increaseAllowance'
-  >)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'increaseAllowance'>);
 }
 
 /**
@@ -1695,18 +1622,18 @@ export function usePrepareTimeDividendEthMulticall(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'multicall'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'multicall',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'multicall'>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'multicall'>);
 }
 
 /**
@@ -1723,21 +1650,18 @@ export function usePrepareTimeDividendEthRenounceOwnership(
       'renounceOwnership'
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'renounceOwnership',
     ...config,
-  } as UsePrepareContractWriteConfig<
-    typeof timeDividendEthABI,
-    'renounceOwnership'
-  >)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'renounceOwnership'>);
 }
 
 /**
@@ -1751,18 +1675,18 @@ export function usePrepareTimeDividendEthTransfer(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transfer'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'transfer',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transfer'>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transfer'>);
 }
 
 /**
@@ -1776,18 +1700,18 @@ export function usePrepareTimeDividendEthTransferFrom(
   config: Omit<
     UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transferFrom'>,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'transferFrom',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transferFrom'>)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transferFrom'>);
 }
 
 /**
@@ -1804,21 +1728,18 @@ export function usePrepareTimeDividendEthTransferOwnership(
       'transferOwnership'
     >,
     'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return usePrepareContractWrite({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     functionName: 'transferOwnership',
     ...config,
-  } as UsePrepareContractWriteConfig<
-    typeof timeDividendEthABI,
-    'transferOwnership'
-  >)
+  } as UsePrepareContractWriteConfig<typeof timeDividendEthABI, 'transferOwnership'>);
 }
 
 /**
@@ -1832,17 +1753,17 @@ export function useTimeDividendEthEvent<TEventName extends string>(
   config: Omit<
     UseContractEventConfig<typeof timeDividendEthABI, TEventName>,
     'abi' | 'address'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractEvent({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     ...config,
-  } as UseContractEventConfig<typeof timeDividendEthABI, TEventName>)
+  } as UseContractEventConfig<typeof timeDividendEthABI, TEventName>);
 }
 
 /**
@@ -1856,18 +1777,18 @@ export function useTimeDividendEthApprovalEvent(
   config: Omit<
     UseContractEventConfig<typeof timeDividendEthABI, 'Approval'>,
     'abi' | 'address' | 'eventName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractEvent({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     eventName: 'Approval',
     ...config,
-  } as UseContractEventConfig<typeof timeDividendEthABI, 'Approval'>)
+  } as UseContractEventConfig<typeof timeDividendEthABI, 'Approval'>);
 }
 
 /**
@@ -1881,18 +1802,18 @@ export function useTimeDividendEthClaimDividendEvent(
   config: Omit<
     UseContractEventConfig<typeof timeDividendEthABI, 'ClaimDividend'>,
     'abi' | 'address' | 'eventName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractEvent({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     eventName: 'ClaimDividend',
     ...config,
-  } as UseContractEventConfig<typeof timeDividendEthABI, 'ClaimDividend'>)
+  } as UseContractEventConfig<typeof timeDividendEthABI, 'ClaimDividend'>);
 }
 
 /**
@@ -1906,18 +1827,18 @@ export function useTimeDividendEthDistributeDividendEvent(
   config: Omit<
     UseContractEventConfig<typeof timeDividendEthABI, 'DistributeDividend'>,
     'abi' | 'address' | 'eventName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractEvent({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     eventName: 'DistributeDividend',
     ...config,
-  } as UseContractEventConfig<typeof timeDividendEthABI, 'DistributeDividend'>)
+  } as UseContractEventConfig<typeof timeDividendEthABI, 'DistributeDividend'>);
 }
 
 /**
@@ -1931,21 +1852,18 @@ export function useTimeDividendEthOwnershipTransferredEvent(
   config: Omit<
     UseContractEventConfig<typeof timeDividendEthABI, 'OwnershipTransferred'>,
     'abi' | 'address' | 'eventName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractEvent({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     eventName: 'OwnershipTransferred',
     ...config,
-  } as UseContractEventConfig<
-    typeof timeDividendEthABI,
-    'OwnershipTransferred'
-  >)
+  } as UseContractEventConfig<typeof timeDividendEthABI, 'OwnershipTransferred'>);
 }
 
 /**
@@ -1959,16 +1877,16 @@ export function useTimeDividendEthTransferEvent(
   config: Omit<
     UseContractEventConfig<typeof timeDividendEthABI, 'Transfer'>,
     'abi' | 'address' | 'eventName'
-  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any,
+  > & { chainId?: keyof typeof timeDividendEthAddress } = {} as any
 ) {
-  const { chain } = useNetwork()
-  const defaultChainId = useChainId()
-  const chainId = config.chainId ?? chain?.id ?? defaultChainId
+  const { chain } = useNetwork();
+  const defaultChainId = useChainId();
+  const chainId = config.chainId ?? chain?.id ?? defaultChainId;
   return useContractEvent({
     abi: timeDividendEthABI,
     address:
       timeDividendEthAddress[chainId as keyof typeof timeDividendEthAddress],
     eventName: 'Transfer',
     ...config,
-  } as UseContractEventConfig<typeof timeDividendEthABI, 'Transfer'>)
+  } as UseContractEventConfig<typeof timeDividendEthABI, 'Transfer'>);
 }
